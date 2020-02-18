@@ -59,6 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainVehicle.cs" />
     <Compile Include="Vehicle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormTrain.resx">
       <DependentUpon>FormTrain.cs</DependentUpon>
     </EmbeddedResource>
