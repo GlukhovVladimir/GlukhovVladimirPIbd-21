@@ -13,7 +13,8 @@ namespace WindowsFormsTrain
     public partial class FormTrain : Form
     {
         private ITransport train;
-
+        private ElecTrain train;
+        
         public FormTrain()
         {
             InitializeComponent();
@@ -29,12 +30,22 @@ namespace WindowsFormsTrain
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            train = new TrainVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+            train = new TrainVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
+            Color.Red);
             train.SetPosition(100, 100, pictureBoxTrain.Width,
             pictureBoxTrain.Height);
             Draw();
         }
        
+        private void buttonMove_Click(object sender, EventArgs e)
+        {    
+           Random rnd = new Random();
+           train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
+           Color.Red, true, true);
+           train.SetPosition(100, 100, pictureBoxTrain.Width,
+           pictureBoxTrain.Height);
+           Draw();
+        }
         private void buttonMove_Click(object sender, EventArgs e)
         {
             string name = (sender as Button).Name;
@@ -55,7 +66,7 @@ namespace WindowsFormsTrain
             }
             Draw();
         }
-
+        
         private void buttonCreateElecTrain_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
