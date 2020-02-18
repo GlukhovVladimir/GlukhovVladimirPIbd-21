@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsTrain
+namespace WindowsFormsTrain
 {
     partial class FormTrain
     {
@@ -29,6 +29,22 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBoxTrain = new System.Windows.Forms.PictureBox();
+            this.buttonCreateElecTrain = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.Location = new System.Drawing.Point(12, 12);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(106, 23);
+            this.buttonCreate.TabIndex = 0;
+            this.buttonCreate.Text = "Create Locomotive";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
+            // buttonUp
+            // 
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).BeginInit();
             this.SuspendLayout();
            
@@ -39,7 +55,6 @@
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
- 
             this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -49,7 +64,9 @@
             this.buttonUp.TabIndex = 1;
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonMove_Click);
-         
+            // 
+            // buttonLeft
+            // 
             this.buttonLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
             this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -59,7 +76,9 @@
             this.buttonLeft.TabIndex = 2;
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
-            
+            // 
+            // buttonDown
+            // 
             this.buttonDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -69,7 +88,9 @@
             this.buttonDown.TabIndex = 3;
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonMove_Click);
-           
+            // 
+            // buttonRight
+            // 
             this.buttonRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
             this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -79,7 +100,9 @@
             this.buttonRight.TabIndex = 4;
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.buttonMove_Click);
-            
+            // 
+            // pictureBoxTrain
+            // 
             this.pictureBoxTrain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxTrain.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTrain.Name = "pictureBoxTrain";
@@ -87,7 +110,23 @@
             this.pictureBoxTrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxTrain.TabIndex = 5;
             this.pictureBoxTrain.TabStop = false;
-          
+            // 
+            // buttonCreateElecTrain
+            // 
+            this.buttonCreateElecTrain.Location = new System.Drawing.Point(124, 12);
+            this.buttonCreateElecTrain.Name = "buttonCreateElecTrain";
+            this.buttonCreateElecTrain.Size = new System.Drawing.Size(121, 23);
+            this.buttonCreateElecTrain.TabIndex = 6;
+            this.buttonCreateElecTrain.Text = "Create Electro Train";
+            this.buttonCreateElecTrain.UseVisualStyleBackColor = true;
+            this.buttonCreateElecTrain.Click += new System.EventHandler(this.buttonCreateElecTrain_Click);
+            // 
+            // FormTrain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonCreateElecTrain);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
@@ -102,7 +141,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -114,6 +152,7 @@
         private System.Windows.Forms.Button buttonRight;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBoxTrain;
+        private System.Windows.Forms.Button buttonCreateElecTrain;
     }
 }
 

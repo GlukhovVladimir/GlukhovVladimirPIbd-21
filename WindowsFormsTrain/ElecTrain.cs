@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsTrain
 {
+    class ElecTrain : TrainVehicle
+    {
+        private const int carWidth = 100;
+        private const int carHeight = 60;
+        public Color DopColor { private set; get; }
+        public bool Antenna { private set; get; }
+        public bool Headlamp { private set; get; }
+   
+        public ElecTrain(int maxSpeed, float weight, Color mainColor, Color dopColor,
+        bool antenna, bool headlamp) : base(maxSpeed, weight, mainColor, dopColor)
     class ElecTrain
     {
         private float _startPosX;
@@ -31,6 +41,13 @@ namespace WindowsFormsTrain
             DopColor = dopColor;
             Antenna = antenna;
             Headlamp = headlamp;
+        }   
+  
+        public override void DrawCar(Graphics g)
+        {
+            Pen romb = new Pen(Color.Black);
+            Brush headlamp = new SolidBrush(Color.Yellow);
+            base.DrawCar(g);
         }
 
         public void SetPosition(int x, int y, int width, int height)

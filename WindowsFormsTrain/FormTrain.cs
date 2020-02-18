@@ -12,6 +12,7 @@ namespace WindowsFormsTrain
 {
     public partial class FormTrain : Form
     {
+        private ITransport train;
         private ElecTrain train;
 
         public FormTrain()
@@ -28,6 +29,16 @@ namespace WindowsFormsTrain
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            train = new TrainVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
+            Color.Red);
+            train.SetPosition(100, 100, pictureBoxTrain.Width,
+            pictureBoxTrain.Height);
+            Draw();
+        }
+       
+        private void buttonMove_Click(object sender, EventArgs e)
+        {    
            Random rnd = new Random();
            train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
            Color.Red, true, true);
@@ -53,6 +64,14 @@ namespace WindowsFormsTrain
                     train.MoveTransport(Direction.Right);
                     break;
             }
+            Draw();
+        }
+        private void buttonCreateElecTrain_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+             train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
+            train.SetPosition(rnd.Next(100, 100), rnd.Next(100, 100), pictureBoxTrain.Width,
+           pictureBoxTrain.Height);
             Draw();
         }
     }
