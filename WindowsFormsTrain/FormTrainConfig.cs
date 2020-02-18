@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace WindowsFormsTrain
     {
         ITransport train = null;
         private event trainDelegate eventAddTrain;
+
         public FormTrainConfig()
         {
             InitializeComponent();

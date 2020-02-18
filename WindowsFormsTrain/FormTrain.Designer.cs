@@ -128,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
