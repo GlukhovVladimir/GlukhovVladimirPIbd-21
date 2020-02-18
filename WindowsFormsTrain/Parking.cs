@@ -72,7 +72,6 @@ namespace WindowsFormsTrain
         private void DrawMarking(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);
-           
             g.DrawRectangle(pen, 0, 0, (_maxCount / 5) * _placeSizeWidth, 720);
             for (int i = 0; i < _maxCount / 5; i++)
             {
