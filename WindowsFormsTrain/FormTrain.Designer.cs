@@ -45,6 +45,15 @@
             // 
             // buttonUp
             // 
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).BeginInit();
+            this.SuspendLayout();
+            this.buttonCreate.Location = new System.Drawing.Point(12, 12);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.TabIndex = 0;
+            this.buttonCreate.Text = "Create";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -128,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

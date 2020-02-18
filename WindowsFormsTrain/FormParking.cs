@@ -15,7 +15,6 @@ namespace WindowsFormsTrain
         MultiLevelParking parking;
         private const int countLevel = 5;
         FormTrainConfig trainForm;
-
         public FormParking()
         {
             InitializeComponent();
@@ -31,8 +30,8 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-            Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
-            pictureBoxParking1.Height);
+                Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
+                pictureBoxParking1.Height);
                 Graphics gr = Graphics.FromImage(bmp);
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking1.Image = bmp;
@@ -50,7 +49,7 @@ namespace WindowsFormsTrain
                     int place = parking[listBoxLevels.SelectedIndex] + train;
                     if (place == -1)
                     {
-                        MessageBox.Show("Нет свободных мест", "Ошибка",
+                       MessageBox.Show("Нет свободных мест", "Ошибка",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     Draw();
@@ -68,7 +67,7 @@ namespace WindowsFormsTrain
                     if (train != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
-                       pictureBoxTakeTrain.Height);
+                        pictureBoxTakeTrain.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         train.SetPosition(5, 100, pictureBoxTakeTrain.Width,
                        pictureBoxTakeTrain.Height);
@@ -108,14 +107,13 @@ namespace WindowsFormsTrain
                     }
                 }
             }
-
         }
 
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
         }
-       
+        
         private void AddTrain(ITransport train)
         {
             if (train != null && listBoxLevels.SelectedIndex > -1)
@@ -131,6 +129,7 @@ namespace WindowsFormsTrain
                 }
             }
         }
+        
         private void button4_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();

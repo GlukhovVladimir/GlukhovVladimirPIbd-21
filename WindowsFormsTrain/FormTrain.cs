@@ -13,16 +13,15 @@ namespace WindowsFormsTrain
     public partial class FormTrain : Form
     {
         private ITransport train;
-
         public FormTrain()
         {
             InitializeComponent();
         }
+        
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxTrain.Width, pictureBoxTrain.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            
             train.DrawTrain(gr);
             pictureBoxTrain.Image = bmp;
         }
@@ -38,7 +37,6 @@ namespace WindowsFormsTrain
        
         private void buttonMove_Click(object sender, EventArgs e)
         {
-          
             string name = (sender as Button).Name;
             switch (name)
             {
@@ -57,7 +55,7 @@ namespace WindowsFormsTrain
             }
             Draw();
         }
-
+        
         private void buttonCreateElecTrain_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
