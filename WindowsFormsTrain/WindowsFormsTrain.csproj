@@ -70,6 +70,8 @@
     <EmbeddedResource Include="FormParking.resx">
       <DependentUpon>FormParking.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormTrain.resx">
       <DependentUpon>FormTrain.cs</DependentUpon>
     </EmbeddedResource>
