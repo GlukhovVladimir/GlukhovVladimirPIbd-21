@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxParking1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxParking = new System.Windows.Forms.PictureBox();
             this.buttonLocomotive = new System.Windows.Forms.Button();
             this.buttonElecTrain = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxPlace = new System.Windows.Forms.GroupBox();
             this.labelPlace = new System.Windows.Forms.Label();
             this.buttonTake = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.pictureBoxTakeTrain = new System.Windows.Forms.PictureBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonNewFormTrain = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.sortButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
+            this.groupBoxPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBoxParking1
+            // pictureBoxParking
             // 
-            this.pictureBoxParking1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxParking1.Location = new System.Drawing.Point(0, 54);
-            this.pictureBoxParking1.Name = "pictureBoxParking1";
-            this.pictureBoxParking1.Size = new System.Drawing.Size(836, 651);
-            this.pictureBoxParking1.TabIndex = 0;
-            this.pictureBoxParking1.TabStop = false;
+            this.pictureBoxParking.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBoxParking.Location = new System.Drawing.Point(0, 54);
+            this.pictureBoxParking.Name = "pictureBoxParking";
+            this.pictureBoxParking.Size = new System.Drawing.Size(836, 651);
+            this.pictureBoxParking.TabIndex = 0;
+            this.pictureBoxParking.TabStop = false;
             // 
             // buttonLocomotive
             // 
@@ -80,16 +80,16 @@
             this.buttonElecTrain.UseVisualStyleBackColor = true;
             this.buttonElecTrain.Click += new System.EventHandler(this.buttonSetElecTrain_Click);
             // 
-            // groupBox1
+            // groupBoxPlace
             // 
-            this.groupBox1.Controls.Add(this.labelPlace);
-            this.groupBox1.Controls.Add(this.buttonTake);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(860, 233);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 95);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
+            this.groupBoxPlace.Controls.Add(this.labelPlace);
+            this.groupBoxPlace.Controls.Add(this.buttonTake);
+            this.groupBoxPlace.Controls.Add(this.maskedTextBoxPlace);
+            this.groupBoxPlace.Location = new System.Drawing.Point(860, 233);
+            this.groupBoxPlace.Name = "groupBoxPlace";
+            this.groupBoxPlace.Size = new System.Drawing.Size(240, 95);
+            this.groupBoxPlace.TabIndex = 3;
+            this.groupBoxPlace.TabStop = false;
             // 
             // labelPlace
             // 
@@ -110,12 +110,12 @@
             this.buttonTake.UseVisualStyleBackColor = true;
             this.buttonTake.Click += new System.EventHandler(this.buttonTakeTrain_Click);
             // 
-            // maskedTextBox1
+            // maskedTextBoxPlace
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(51, 28);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(143, 20);
-            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBoxPlace.Location = new System.Drawing.Point(51, 28);
+            this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
+            this.maskedTextBoxPlace.Size = new System.Drawing.Size(143, 20);
+            this.maskedTextBoxPlace.TabIndex = 5;
             // 
             // pictureBoxTakeTrain
             // 
@@ -144,15 +144,15 @@
             this.buttonNewFormTrain.UseVisualStyleBackColor = true;
             this.buttonNewFormTrain.Click += new System.EventHandler(this.button4_Click);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1116, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1116, 24);
+            this.menuStrip.TabIndex = 10;
+            this.menuStrip.Text = "menuStrip";
             // 
             // файлToolStripMenuItem
             // 
@@ -177,14 +177,14 @@
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "txt file | *.txt";
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "txt file | *.txt";
             // 
-            // saveFileDialog1
+            // saveFileDialog
             // 
-            this.saveFileDialog1.Filter = "txt file | *.txt";
+            this.saveFileDialog.Filter = "txt file | *.txt";
             // 
             // sortButton
             // 
@@ -205,20 +205,20 @@
             this.Controls.Add(this.buttonNewFormTrain);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.pictureBoxTakeTrain);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxPlace);
             this.Controls.Add(this.buttonElecTrain);
             this.Controls.Add(this.buttonLocomotive);
-            this.Controls.Add(this.pictureBoxParking1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.pictureBoxParking);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormParking";
             this.Text = "Парковка";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+            this.groupBoxPlace.ResumeLayout(false);
+            this.groupBoxPlace.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,22 +226,22 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxParking1;
+        private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.Button buttonLocomotive;
         private System.Windows.Forms.Button buttonElecTrain;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxPlace;
         private System.Windows.Forms.Label labelPlace;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxTakeTrain;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Button buttonNewFormTrain;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button sortButton;
     }
 }
