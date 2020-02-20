@@ -62,6 +62,7 @@ namespace WindowsFormsTrain
             {
 
                 if (maskedTextBoxPlace.Text != "")
+
                 {
                     var car = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
 
