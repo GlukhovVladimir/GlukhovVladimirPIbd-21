@@ -16,15 +16,15 @@ namespace WindowsFormsTrain
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<ITransport>(15, pictureBoxParking1.Width,pictureBoxParking1.Height);
+            parking = new Parking<ITransport>(15, pictureBoxParking.Width,pictureBoxParking.Height);
             Draw();
         }
         private void Draw()
         {
-            Bitmap bmp = new Bitmap(pictureBoxParking1.Width, pictureBoxParking1.Height);
+            Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
             Graphics gr = Graphics.FromImage(bmp);
             parking.Draw(gr);
-            pictureBoxParking1.Image = bmp;
+            pictureBoxParking.Image = bmp;
         }
 
         private void buttonSetLocomotive_Click(object sender, EventArgs e)
@@ -40,12 +40,12 @@ namespace WindowsFormsTrain
 
         private void buttonTakeTrain_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (maskedTextBoxPlace.Text != "")
             {
-                var car = parking - Convert.ToInt32(maskedTextBox1.Text);
+                var car = parking - Convert.ToInt32(maskedTextBoxPlace.Text);
                 if (car != null)
                 {
-                    Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
+                    Bitmap bmp = new Bitmap(pictureBoxParking.Width,
                    pictureBoxTakeTrain.Height);
                     Graphics gr = Graphics.FromImage(bmp);
                     car.SetPosition(5, 100, pictureBoxTakeTrain.Width,

@@ -11,7 +11,7 @@ namespace WindowsFormsTrain
     {
         private const int carWidth = 100;
         private const int carHeight = 60;
-
+   
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
