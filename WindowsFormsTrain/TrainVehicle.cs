@@ -23,7 +23,7 @@ namespace WindowsFormsTrain
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
-            {               
+            {   
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - 2.1 * carWidth)
                     {
@@ -60,19 +60,19 @@ namespace WindowsFormsTrain
             Brush body = new SolidBrush(MainColor);
             Brush wheels = new SolidBrush(Color.Black);
             Brush empty = new SolidBrush(Color.White);
-            
-            g.FillRectangle(body, _startPosX, _startPosY - 50, 100, 50);
-            g.FillRectangle(body, _startPosX + 110, _startPosY - 50, 100, 50);
-            g.FillRectangle(empty, _startPosX + 25, _startPosY - 15, 50, 15);
-            g.FillRectangle(empty, _startPosX + 135, _startPosY - 15, 50, 15);
-            g.FillEllipse(wheels, _startPosX + 28, _startPosY - 10, 20, 20);
-            g.FillEllipse(wheels, _startPosX + 52, _startPosY - 10, 20, 20);
-            g.FillEllipse(wheels, _startPosX + 138, _startPosY - 10, 20, 20);
-            g.FillEllipse(wheels, _startPosX + 162, _startPosY - 10, 20, 20);
-            g.FillRectangle(empty, _startPosX + 15, _startPosY - 40, 30, 20);
-            g.FillRectangle(empty, _startPosX + 55, _startPosY - 40, 30, 20);
-            g.FillRectangle(empty, _startPosX + 125, _startPosY - 40, 30, 20);
-            g.FillRectangle(empty, _startPosX + 175, _startPosY - 40, 32, 20); 
+
+            g.FillRectangle(body, _startPosX, _startPosY - 50 + 60 + 40, 100, 50);
+            g.FillRectangle(body, _startPosX + 110, _startPosY - 50 + 60 + 40, 100, 50);
+            g.FillRectangle(empty, _startPosX + 25, _startPosY - 15 + 60 + 40, 50, 15);
+            g.FillRectangle(empty, _startPosX + 135, _startPosY - 15 + 60 + 40, 50, 15);
+            g.FillEllipse(wheels, _startPosX + 28, _startPosY - 10 + 60 + 40, 20, 20);
+            g.FillEllipse(wheels, _startPosX + 52, _startPosY - 10 + 60 + 40, 20, 20);
+            g.FillEllipse(wheels, _startPosX + 138, _startPosY - 10 + 60 + 40, 20, 20);
+            g.FillEllipse(wheels, _startPosX + 162, _startPosY - 10 + 60 + 40, 20, 20);
+            g.FillRectangle(empty, _startPosX + 15, _startPosY - 40 + 60 + 40, 30, 20);
+            g.FillRectangle(empty, _startPosX + 55, _startPosY - 40 + 60 + 40, 30, 20);
+            g.FillRectangle(empty, _startPosX + 125, _startPosY - 40 + 60 + 40, 30, 20);
+            g.FillRectangle(empty, _startPosX + 175, _startPosY - 40 + 60 + 40, 32, 20);
         }
     }
 }

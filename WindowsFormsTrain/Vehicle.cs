@@ -12,7 +12,7 @@ namespace WindowsFormsTrain
         protected float _startPosX;
         protected float _startPosY;
         protected int _pictureWidth;
-        protected int _pictureHeight;
+        protected int _pictureHeight; 
         public int MaxSpeed { protected set; get; }
         public float Weight { protected set; get; }
         public Color MainColor { protected set; get; }

@@ -33,18 +33,18 @@ namespace WindowsFormsTrain
             base.DrawCar(g);
             if (Antenna)
             {
-                g.DrawLine(romb, _startPosX + 15, _startPosY - 70, _startPosX + 50, _startPosY - 85);
-                g.DrawLine(romb, _startPosX + 50, _startPosY - 85, _startPosX + 85, _startPosY - 70);
-                g.DrawLine(romb, _startPosX + 85, _startPosY - 70, _startPosX + 50, _startPosY - 55);
-                g.DrawLine(romb, _startPosX + 50, _startPosY - 55, _startPosX + 15, _startPosY - 70);
-                g.DrawLine(romb, _startPosX + 125, _startPosY - 70, _startPosX + 160, _startPosY - 85);
-                g.DrawLine(romb, _startPosX + 160, _startPosY - 85, _startPosX + 195, _startPosY - 70);
-                g.DrawLine(romb, _startPosX + 195, _startPosY - 70, _startPosX + 160, _startPosY - 55);
-                g.DrawLine(romb, _startPosX + 160, _startPosY - 55, _startPosX + 125, _startPosY - 70);
+                g.DrawLine(romb, _startPosX + 15, _startPosY - 70 + 100, _startPosX + 50, _startPosY - 85 + 100);
+                g.DrawLine(romb, _startPosX + 50, _startPosY - 85 + 100, _startPosX + 85, _startPosY - 70 + 100);
+                g.DrawLine(romb, _startPosX + 85, _startPosY - 70 + 100, _startPosX + 50, _startPosY - 55 + 100);
+                g.DrawLine(romb, _startPosX + 50, _startPosY - 55 + 100, _startPosX + 15, _startPosY - 70 + 100);
+                g.DrawLine(romb, _startPosX + 125, _startPosY - 70 + 100, _startPosX + 160, _startPosY - 85 + 100);
+                g.DrawLine(romb, _startPosX + 160, _startPosY - 85 + 100, _startPosX + 195, _startPosY - 70 + 100);
+                g.DrawLine(romb, _startPosX + 195, _startPosY - 70 + 100, _startPosX + 160, _startPosY - 55 + 100);
+                g.DrawLine(romb, _startPosX + 160, _startPosY - 55 + 100, _startPosX + 125, _startPosY - 70 + 100);
             }
             if (Headlamp)
             {
-                g.FillRectangle(headlamp, _startPosX + 200, _startPosY - 20, 10, 10);
+                g.FillRectangle(headlamp, _startPosX + 200, _startPosY - 20 + 100, 10, 10);
             }
         }
         public void setDopColor(Color color)

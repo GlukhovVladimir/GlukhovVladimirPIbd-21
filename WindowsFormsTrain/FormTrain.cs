@@ -22,6 +22,7 @@ namespace WindowsFormsTrain
         {
             Bitmap bmp = new Bitmap(pictureBoxTrain.Width, pictureBoxTrain.Height);
             Graphics gr = Graphics.FromImage(bmp);
+            
             train.DrawCar(gr);
             pictureBoxTrain.Image = bmp;
         }

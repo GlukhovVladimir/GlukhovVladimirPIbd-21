@@ -36,6 +36,7 @@
             this.buttonTake = new System.Windows.Forms.Button();
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.pictureBoxTakeTrain = new System.Windows.Forms.PictureBox();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).BeginInit();
@@ -46,7 +47,7 @@
             this.pictureBoxParking.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxParking.Location = new System.Drawing.Point(0, 12);
             this.pictureBoxParking.Name = "pictureBoxParking";
-            this.pictureBoxParking.Size = new System.Drawing.Size(835, 556);
+            this.pictureBoxParking.Size = new System.Drawing.Size(836, 651);
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
@@ -115,11 +116,21 @@
             this.pictureBoxTakeTrain.TabIndex = 7;
             this.pictureBoxTakeTrain.TabStop = false;
             // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.Location = new System.Drawing.Point(917, 110);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(120, 95);
+            this.listBoxLevels.TabIndex = 8;
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 580);
+            this.ClientSize = new System.Drawing.Size(1321, 768);
+            this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.pictureBoxTakeTrain);
             this.Controls.Add(this.groupBoxPlace);
             this.Controls.Add(this.buttonElecTrain);
@@ -145,5 +156,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxTakeTrain;
+        private System.Windows.Forms.ListBox listBoxLevels;
     }
 }
