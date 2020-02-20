@@ -17,8 +17,8 @@ namespace WindowsFormsTrain
         public FormParking()
         {
             InitializeComponent();
-            parking = new MultiLevelParking(countLevel, pictureBoxParking1.Width,
-            pictureBoxParking1.Height);
+            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
+            pictureBoxParking.Height);
             for (int i = 0; i < countLevel; i++)
             {
                 listBoxLevels.Items.Add("Уровень " + (i + 1));
@@ -29,11 +29,11 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-                Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
-                pictureBoxParking1.Height);
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width,
+                pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
-                pictureBoxParking1.Image = bmp;
+                pictureBoxParking.Image = bmp;
             }
         }
 
@@ -61,13 +61,13 @@ namespace WindowsFormsTrain
             if (listBoxLevels.SelectedIndex > -1)
             {
 
-                if (maskedTextBox1.Text != "")
+                if (maskedTextBoxPlace.Text != "")
                 {
-                    var car = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBox1.Text);
+                    var car = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
 
                     if (car != null)
                     {
-                        Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
+                        Bitmap bmp = new Bitmap(pictureBoxParking.Width,
                        pictureBoxTakeTrain.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         car.SetPosition(5, 100, pictureBoxTakeTrain.Width,

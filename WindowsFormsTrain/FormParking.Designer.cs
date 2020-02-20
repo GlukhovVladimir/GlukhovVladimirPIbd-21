@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxParking1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxParking = new System.Windows.Forms.PictureBox();
             this.buttonLocomotive = new System.Windows.Forms.Button();
             this.buttonElecTrain = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxPlace = new System.Windows.Forms.GroupBox();
             this.labelPlace = new System.Windows.Forms.Label();
             this.buttonTake = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.pictureBoxTakeTrain = new System.Windows.Forms.PictureBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
+            this.groupBoxPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxParking1
+            // pictureBoxParking
             // 
-            this.pictureBoxParking1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxParking1.Location = new System.Drawing.Point(0, 12);
-            this.pictureBoxParking1.Name = "pictureBoxParking1";
-            this.pictureBoxParking1.Size = new System.Drawing.Size(836, 651);
-            this.pictureBoxParking1.TabIndex = 0;
-            this.pictureBoxParking1.TabStop = false;
+            this.pictureBoxParking.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBoxParking.Location = new System.Drawing.Point(0, 12);
+            this.pictureBoxParking.Name = "pictureBoxParking";
+            this.pictureBoxParking.Size = new System.Drawing.Size(836, 651);
+            this.pictureBoxParking.TabIndex = 0;
+            this.pictureBoxParking.TabStop = false;
             // 
             // buttonLocomotive
             // 
@@ -71,16 +71,16 @@
             this.buttonElecTrain.UseVisualStyleBackColor = true;
             this.buttonElecTrain.Click += new System.EventHandler(this.buttonSetElecTrain_Click);
             // 
-            // groupBox1
+            // groupBoxPlace
             // 
-            this.groupBox1.Controls.Add(this.labelPlace);
-            this.groupBox1.Controls.Add(this.buttonTake);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(911, 211);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(141, 95);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
+            this.groupBoxPlace.Controls.Add(this.labelPlace);
+            this.groupBoxPlace.Controls.Add(this.buttonTake);
+            this.groupBoxPlace.Controls.Add(this.maskedTextBoxPlace);
+            this.groupBoxPlace.Location = new System.Drawing.Point(911, 211);
+            this.groupBoxPlace.Name = "groupBoxPlace";
+            this.groupBoxPlace.Size = new System.Drawing.Size(141, 95);
+            this.groupBoxPlace.TabIndex = 3;
+            this.groupBoxPlace.TabStop = false;
             // 
             // labelPlace
             // 
@@ -101,12 +101,12 @@
             this.buttonTake.UseVisualStyleBackColor = true;
             this.buttonTake.Click += new System.EventHandler(this.buttonTakeTrain_Click);
             // 
-            // maskedTextBox1
+            // maskedTextBoxPlace
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(51, 28);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(83, 20);
-            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBoxPlace.Location = new System.Drawing.Point(51, 28);
+            this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
+            this.maskedTextBoxPlace.Size = new System.Drawing.Size(83, 20);
+            this.maskedTextBoxPlace.TabIndex = 5;
             // 
             // pictureBoxTakeTrain
             // 
@@ -132,15 +132,15 @@
             this.ClientSize = new System.Drawing.Size(1321, 768);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.pictureBoxTakeTrain);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxPlace);
             this.Controls.Add(this.buttonElecTrain);
             this.Controls.Add(this.buttonLocomotive);
-            this.Controls.Add(this.pictureBoxParking1);
+            this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "Парковка";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+            this.groupBoxPlace.ResumeLayout(false);
+            this.groupBoxPlace.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).EndInit();
             this.ResumeLayout(false);
 
@@ -148,12 +148,12 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxParking1;
+        private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.Button buttonLocomotive;
         private System.Windows.Forms.Button buttonElecTrain;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxPlace;
         private System.Windows.Forms.Label labelPlace;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxTakeTrain;
         private System.Windows.Forms.ListBox listBoxLevels;
