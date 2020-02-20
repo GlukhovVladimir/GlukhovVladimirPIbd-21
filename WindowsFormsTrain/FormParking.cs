@@ -100,7 +100,8 @@ namespace WindowsFormsTrain
                         logger.Error("Неизвестная ошибка");
                     }
                 }
-            }
+            }
+
         }
 
         private void buttonSetElecTrain_Click(object sender, EventArgs e)
