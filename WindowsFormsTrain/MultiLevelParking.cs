@@ -36,7 +36,6 @@ namespace WindowsFormsTrain
                 return null;
             }
         }
-
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
