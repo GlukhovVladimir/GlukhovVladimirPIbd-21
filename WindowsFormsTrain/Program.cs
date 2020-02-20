@@ -13,7 +13,7 @@ namespace WindowsFormsTrain
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTrain());
+            Application.Run(new FormParking());
         }
     }
 }

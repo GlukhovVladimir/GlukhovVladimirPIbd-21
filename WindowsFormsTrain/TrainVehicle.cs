@@ -12,7 +12,7 @@ namespace WindowsFormsTrain
         private const int carWidth = 100;
         private const int carHeight = 60;
    
-        public TrainVehicle(int maxSpeed, float weight, Color mainColor, Color dopColor)
+        public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -23,8 +23,7 @@ namespace WindowsFormsTrain
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
-            {
-                
+            {               
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - 2.1 * carWidth)
                     {
@@ -73,7 +72,7 @@ namespace WindowsFormsTrain
             g.FillRectangle(empty, _startPosX + 15, _startPosY - 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 55, _startPosY - 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 125, _startPosY - 40, 30, 20);
-            g.FillRectangle(empty, _startPosX + 175, _startPosY - 40, 32, 20);
+            g.FillRectangle(empty, _startPosX + 175, _startPosY - 40, 32, 20); 
         }
     }
 }
