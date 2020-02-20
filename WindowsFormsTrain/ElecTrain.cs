@@ -51,5 +51,8 @@ namespace WindowsFormsTrain
         {
             DopColor = color;
         }
+
     }
 }
+
+

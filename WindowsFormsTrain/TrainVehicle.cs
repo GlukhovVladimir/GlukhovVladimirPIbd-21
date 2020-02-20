@@ -11,6 +11,7 @@ namespace WindowsFormsTrain
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
+   
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
@@ -59,6 +60,7 @@ namespace WindowsFormsTrain
             Brush body = new SolidBrush(MainColor);
             Brush wheels = new SolidBrush(Color.Black);
             Brush empty = new SolidBrush(Color.White);
+
             g.FillRectangle(body, _startPosX, _startPosY - 50 + 60 + 40, 100, 50);
             g.FillRectangle(body, _startPosX + 110, _startPosY - 50 + 60 + 40, 100, 50);
             g.FillRectangle(empty, _startPosX + 25, _startPosY - 15 + 60 + 40, 50, 15);
