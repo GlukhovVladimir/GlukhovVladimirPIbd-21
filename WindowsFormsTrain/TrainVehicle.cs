@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,6 +12,7 @@ namespace WindowsFormsTrain
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
+   
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
@@ -20,7 +20,6 @@ namespace WindowsFormsTrain
             MainColor = mainColor;
             
         }
-
         public TrainVehicle(string info)
         {
             string[] strs = info.Split(';');
@@ -30,8 +29,7 @@ namespace WindowsFormsTrain
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
             }
-        }
-        
+        }
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
@@ -87,7 +85,6 @@ namespace WindowsFormsTrain
             g.FillRectangle(empty, _startPosX + 125, _startPosY - 40 + 60 + 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 175, _startPosY - 40 + 60 + 40, 32, 20);
         }
-
         public override string ToString()
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;

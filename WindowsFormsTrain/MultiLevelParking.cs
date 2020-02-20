@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -85,8 +84,7 @@ namespace WindowsFormsTrain
         {
             if (!File.Exists(filename))
             {
-                throw new FileNotFoundException();
-
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))

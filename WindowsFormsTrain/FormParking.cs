@@ -1,4 +1,3 @@
-
 ﻿using System;
 using NLog;
 using System.Collections.Generic;
@@ -23,8 +22,8 @@ namespace WindowsFormsTrain
         {
             InitializeComponent();
             logger = LogManager.GetCurrentClassLogger();
-            parking = new MultiLevelParking(countLevel, pictureBoxParking1.Width,
-            pictureBoxParking1.Height);
+            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
+            pictureBoxParking.Height);
             for (int i = 0; i < countLevel; i++)
             {
                 listBoxLevels.Items.Add("Уровень " + (i + 1));
@@ -36,11 +35,11 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-            Bitmap bmp = new Bitmap(pictureBoxParking1.Width,
-            pictureBoxParking1.Height);
+            Bitmap bmp = new Bitmap(pictureBoxParking.Width,
+            pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
-                pictureBoxParking1.Image = bmp;
+                pictureBoxParking.Image = bmp;
             }
         }
 
@@ -68,12 +67,12 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-                if (maskedTextBox1.Text != "")
+                if (maskedTextBoxPlace.Text != "")
                 {
                     try
                     {
                         var train = parking[listBoxLevels.SelectedIndex] -
-                       Convert.ToInt32(maskedTextBox1.Text);
+                       Convert.ToInt32(maskedTextBoxPlace.Text);
                         Bitmap bmp = new Bitmap(pictureBoxTakeTrain.Width,
                        pictureBoxTakeTrain.Height);
                         Graphics gr = Graphics.FromImage(bmp);
@@ -82,7 +81,7 @@ namespace WindowsFormsTrain
                         train.DrawTrain(gr);
                         pictureBoxTakeTrain.Image = bmp;
                         logger.Info("Изъят автомобиль " + train.ToString() + " с места "
-                       + maskedTextBox1.Text);
+                       + maskedTextBoxPlace.Text);
                         Draw();
                     }
                     catch (ParkingNotFoundException ex)
@@ -101,8 +100,7 @@ namespace WindowsFormsTrain
                         logger.Error("Неизвестная ошибка");
                     }
                 }
-            }
-
+            }
         }
 
         private void buttonSetElecTrain_Click(object sender, EventArgs e)
@@ -169,14 +167,14 @@ namespace WindowsFormsTrain
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    parking.SaveData(saveFileDialog1.FileName);
+                    parking.SaveData(saveFileDialog.FileName);
                     MessageBox.Show("Сохранение прошло успешно", "Результат",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    logger.Info("Сохранено в файл " + saveFileDialog1.FileName);
+                    logger.Info("Сохранено в файл " + saveFileDialog.FileName);
                 }
                 catch (Exception ex)
                 {
@@ -189,14 +187,14 @@ namespace WindowsFormsTrain
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    parking.LoadData(openFileDialog1.FileName);
+                    parking.LoadData(openFileDialog.FileName);
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                    logger.Info("Загружено из файла " + openFileDialog1.FileName);
+                    logger.Info("Загружено из файла " + openFileDialog.FileName);
                 }
                 catch (ParkingOccupiedPlaceException ex)
                 {

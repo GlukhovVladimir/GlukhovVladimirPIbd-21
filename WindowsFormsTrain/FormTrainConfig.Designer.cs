@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pictureBoxTrainConfig = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTypeOfTrain = new System.Windows.Forms.GroupBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.labelElecTrain = new System.Windows.Forms.Label();
             this.labelLocomotive = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTrain = new System.Windows.Forms.Panel();
             this.labelSecondColor = new System.Windows.Forms.Label();
             this.labelMainColor = new System.Windows.Forms.Label();
             this.groupBoxColor = new System.Windows.Forms.GroupBox();
@@ -47,8 +47,8 @@
             this.panelGreen = new System.Windows.Forms.Label();
             this.panelBlack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrainConfig)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.groupBoxTypeOfTrain.SuspendLayout();
+            this.panelTrain.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,18 +61,18 @@
             this.pictureBoxTrainConfig.TabIndex = 0;
             this.pictureBoxTrainConfig.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxTypeOfTrain
             // 
-            this.groupBox1.Controls.Add(this.buttonCancel);
-            this.groupBox1.Controls.Add(this.buttonAdd);
-            this.groupBox1.Controls.Add(this.labelElecTrain);
-            this.groupBox1.Controls.Add(this.labelLocomotive);
-            this.groupBox1.Location = new System.Drawing.Point(28, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 228);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Type of Train";
+            this.groupBoxTypeOfTrain.Controls.Add(this.buttonCancel);
+            this.groupBoxTypeOfTrain.Controls.Add(this.buttonAdd);
+            this.groupBoxTypeOfTrain.Controls.Add(this.labelElecTrain);
+            this.groupBoxTypeOfTrain.Controls.Add(this.labelLocomotive);
+            this.groupBoxTypeOfTrain.Location = new System.Drawing.Point(28, 54);
+            this.groupBoxTypeOfTrain.Name = "groupBoxTypeOfTrain";
+            this.groupBoxTypeOfTrain.Size = new System.Drawing.Size(200, 228);
+            this.groupBoxTypeOfTrain.TabIndex = 1;
+            this.groupBoxTypeOfTrain.TabStop = false;
+            this.groupBoxTypeOfTrain.Text = "Type of Train";
             // 
             // buttonCancel
             // 
@@ -113,19 +113,19 @@
             this.labelLocomotive.Text = "Locomotive";
             this.labelLocomotive.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelTrain_MouseDown);
             // 
-            // panel1
+            // panelTrain
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.labelSecondColor);
-            this.panel1.Controls.Add(this.labelMainColor);
-            this.panel1.Controls.Add(this.pictureBoxTrainConfig);
-            this.panel1.Location = new System.Drawing.Point(256, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 228);
-            this.panel1.TabIndex = 2;
-            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelTrain_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelTrain_DragEnter);
+            this.panelTrain.AllowDrop = true;
+            this.panelTrain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTrain.Controls.Add(this.labelSecondColor);
+            this.panelTrain.Controls.Add(this.labelMainColor);
+            this.panelTrain.Controls.Add(this.pictureBoxTrainConfig);
+            this.panelTrain.Location = new System.Drawing.Point(256, 54);
+            this.panelTrain.Name = "panelTrain";
+            this.panelTrain.Size = new System.Drawing.Size(269, 228);
+            this.panelTrain.TabIndex = 2;
+            this.panelTrain.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelTrain_DragDrop);
+            this.panelTrain.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelTrain_DragEnter);
             // 
             // labelSecondColor
             // 
@@ -266,13 +266,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBoxColor);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panelTrain);
+            this.Controls.Add(this.groupBoxTypeOfTrain);
             this.Name = "FormTrainConfig";
             this.Text = "FormTrainConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTrainConfig)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.groupBoxTypeOfTrain.ResumeLayout(false);
+            this.panelTrain.ResumeLayout(false);
             this.groupBoxColor.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -281,10 +281,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxTrainConfig;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTypeOfTrain;
         private System.Windows.Forms.Label labelElecTrain;
         private System.Windows.Forms.Label labelLocomotive;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelTrain;
         private System.Windows.Forms.Label labelSecondColor;
         private System.Windows.Forms.Label labelMainColor;
         private System.Windows.Forms.GroupBox groupBoxColor;
