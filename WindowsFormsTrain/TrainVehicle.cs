@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog;
 
 namespace WindowsFormsTrain
 {
@@ -12,7 +13,7 @@ namespace WindowsFormsTrain
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
-
+   
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
@@ -20,7 +21,6 @@ namespace WindowsFormsTrain
             MainColor = mainColor;
             
         }
-
         public TrainVehicle(string info)
         {
             string[] strs = info.Split(';');
@@ -70,7 +70,6 @@ namespace WindowsFormsTrain
   
         public override void DrawTrain(Graphics g)
         {
-          
             Brush body = new SolidBrush(MainColor);
             Brush wheels = new SolidBrush(Color.Black);
             Brush empty = new SolidBrush(Color.White);
@@ -88,7 +87,6 @@ namespace WindowsFormsTrain
             g.FillRectangle(empty, _startPosX + 125, _startPosY - 40 + 60 + 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 175, _startPosY - 40 + 60 + 40, 32, 20);
         }
-
         public override string ToString()
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;

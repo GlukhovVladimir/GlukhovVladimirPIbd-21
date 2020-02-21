@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
+using NLog;
 
 namespace WindowsFormsTrain
 {
@@ -27,6 +28,7 @@ namespace WindowsFormsTrain
             Headlamp = headlamp;
             Random rnd = new Random();
         }
+
         public ElecTrain(string info) : base(info)
         {
             string[] strs = info.Split(';');
@@ -62,10 +64,12 @@ namespace WindowsFormsTrain
                 g.FillRectangle(headlamp, _startPosX + 200, _startPosY - 20 + 100, 10, 10);
             }
         }
+
         public void SetDopColor(Color color)
         {
             DopColor = color;
         }
+
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Antenna + ";" +

@@ -1,7 +1,9 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NLog;
 using System.Threading.Tasks;
 using System.Drawing;
 
@@ -15,6 +17,7 @@ namespace WindowsFormsTrain
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 300;
         private const int _placeSizeHeight = 130;
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -23,11 +26,12 @@ namespace WindowsFormsTrain
             PictureHeight = pictureHeight;
             
         }
+
         public static int operator +(Parking<T> p, T train)
         {
             if (p._places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -51,8 +55,9 @@ namespace WindowsFormsTrain
                 p._places.Remove(index);
                 return train;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
+
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);
@@ -92,7 +97,8 @@ namespace WindowsFormsTrain
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
+
             }
             set
             {
@@ -101,6 +107,10 @@ namespace WindowsFormsTrain
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5
                     * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog;
 
 namespace WindowsFormsTrain
 {
@@ -19,13 +20,14 @@ namespace WindowsFormsTrain
             parkingStages = new List<Parking<ITransport>>();
             this.pictureWidth = pictureWidth;
             this.pictureHeight = pictureHeight;
-
+          
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth,
                pictureHeight));
             }
         }
+
         public Parking<ITransport> this[int ind]
         {
             get
@@ -37,6 +39,7 @@ namespace WindowsFormsTrain
                 return null;
             }
         }
+
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
@@ -51,38 +54,37 @@ namespace WindowsFormsTrain
                     sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var car = level[i];
-                        if (car != null)
+                        var vehicle = level[i];
+                        if (vehicle != null)
                         {
-                            if (car.GetType().Name == "TrainVehicle")
+                            if (vehicle.GetType().Name == "Locomotive")
                             {
-                                sw.Write(i + ":TrainVehicle:");
+                                sw.Write(i + ":Locomotive:");
                             }
-                            if (car.GetType().Name == "ElecTrain")
+                            if (vehicle.GetType().Name == "ElecTrain")
                             {
-                               sw.Write(i + ":ElecTrain:");
+                                sw.Write(i + ":ElecTrain:");
                             }
-                            sw.WriteLine(car);
+                            sw.WriteLine(vehicle);
                         }
                     }
                 }
-                
+                return true;
             }
-            return true;
         }
-     
+
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
-            string buffer = "";
+            string buff = "";
             using (StreamReader sr = new StreamReader(filename))
             {
-                if ((buffer = sr.ReadLine()).Contains("CountLeveles"))
+                if ((buff = sr.ReadLine()).Contains("CountLeveles"))
                 {
-                    int count = Convert.ToInt32(buffer.Split(':')[1]);
+                    int count = Convert.ToInt32(buff.Split(':')[1]);
                     if (parkingStages != null)
                     {
                         parkingStages.Clear();
@@ -91,32 +93,31 @@ namespace WindowsFormsTrain
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
                 int counter = -1;
-                ITransport car = null;
-                while ((buffer = sr.ReadLine()) != null)
+                ITransport vehicle = null;
+                while ((buff = sr.ReadLine()) != null)
                 {
-                    if (buffer == "Level")
+                    if (buff == "Level")
                     {
                         counter++;
                         parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
                         continue;
                     }
-                    if (string.IsNullOrEmpty(buffer))
+                    if (string.IsNullOrEmpty(buff))
                     {
                         continue;
                     }
-                    if (buffer.Split(':')[1] == "Locomotive")
+                    if (buff.Split(':')[1] == "Truck")
                     {
-                        Console.WriteLine(buffer.Split(':')[2]);
-                        car = new TrainVehicle(buffer.Split(':')[2]);
+                        vehicle = new TrainVehicle(buff.Split(':')[2]);
                     }
-                    else if (buffer.Split(':')[1] == "ElecTrain")
+                    else if (buff.Split(':')[1] == "Tipper")
                     {
-                        car = new ElecTrain(buffer.Split(':')[2]);
+                        vehicle = new ElecTrain(buff.Split(':')[2]);
                     }
-                    parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = car;
+                    parkingStages[counter][Convert.ToInt32(buff.Split(':')[0])] = vehicle;
                 }
             }
             return true;

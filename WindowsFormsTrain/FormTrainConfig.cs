@@ -15,7 +15,6 @@ namespace WindowsFormsTrain
     {
         ITransport train = null;
         private event trainDelegate eventAddTrain;
-
         public FormTrainConfig()
         {
             InitializeComponent();
@@ -103,6 +102,7 @@ namespace WindowsFormsTrain
             labelElecTrain.DoDragDrop(labelElecTrain.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
+
         private void panelTrain_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
