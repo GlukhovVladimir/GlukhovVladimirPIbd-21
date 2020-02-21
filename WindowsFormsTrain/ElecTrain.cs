@@ -9,7 +9,7 @@ using NLog;
 
 namespace WindowsFormsTrain
 {
-    class ElecTrain : TrainVehicle
+    class ElecTrain : TrainVehicle, IComparable<ElecTrain>, IEquatable<ElecTrain>
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
@@ -74,6 +74,75 @@ namespace WindowsFormsTrain
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Antenna + ";" +
            Headlamp;
+        }
+
+        public int CompareTo(ElecTrain other)
+        {
+            var res = (this is TrainVehicle).CompareTo(other is TrainVehicle);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (Antenna != other.Antenna)
+            {
+                return Antenna.CompareTo(other.Antenna);
+            }
+            if (Headlamp != other.Headlamp)
+            {
+                return Headlamp.CompareTo(other.Headlamp);
+            }
+            return 0;
+        }
+
+        public bool Equals(ElecTrain other)
+        {
+            var res = (this as TrainVehicle).Equals(other as TrainVehicle);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Antenna != other.Antenna)
+            {
+                return false;
+            }
+            if (Headlamp != other.Headlamp)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is TrainVehicle carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

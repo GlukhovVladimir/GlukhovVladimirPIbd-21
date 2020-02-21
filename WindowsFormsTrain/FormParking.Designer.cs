@@ -44,6 +44,7 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.sortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).BeginInit();
@@ -53,7 +54,7 @@
             // pictureBoxParking
             // 
             this.pictureBoxParking.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxParking.Location = new System.Drawing.Point(0, 27);
+            this.pictureBoxParking.Location = new System.Drawing.Point(0, 54);
             this.pictureBoxParking.Name = "pictureBoxParking";
             this.pictureBoxParking.Size = new System.Drawing.Size(836, 651);
             this.pictureBoxParking.TabIndex = 0;
@@ -61,7 +62,7 @@
             // 
             // buttonLocomotive
             // 
-            this.buttonLocomotive.Location = new System.Drawing.Point(847, 12);
+            this.buttonLocomotive.Location = new System.Drawing.Point(860, 27);
             this.buttonLocomotive.Name = "buttonLocomotive";
             this.buttonLocomotive.Size = new System.Drawing.Size(109, 36);
             this.buttonLocomotive.TabIndex = 1;
@@ -71,7 +72,7 @@
             // 
             // buttonElecTrain
             // 
-            this.buttonElecTrain.Location = new System.Drawing.Point(847, 54);
+            this.buttonElecTrain.Location = new System.Drawing.Point(860, 69);
             this.buttonElecTrain.Name = "buttonElecTrain";
             this.buttonElecTrain.Size = new System.Drawing.Size(109, 37);
             this.buttonElecTrain.TabIndex = 2;
@@ -84,16 +85,16 @@
             this.groupBoxPlace.Controls.Add(this.labelPlace);
             this.groupBoxPlace.Controls.Add(this.buttonTake);
             this.groupBoxPlace.Controls.Add(this.maskedTextBoxPlace);
-            this.groupBoxPlace.Location = new System.Drawing.Point(911, 211);
+            this.groupBoxPlace.Location = new System.Drawing.Point(860, 233);
             this.groupBoxPlace.Name = "groupBoxPlace";
-            this.groupBoxPlace.Size = new System.Drawing.Size(141, 95);
+            this.groupBoxPlace.Size = new System.Drawing.Size(240, 95);
             this.groupBoxPlace.TabIndex = 3;
             this.groupBoxPlace.TabStop = false;
             // 
             // labelPlace
             // 
             this.labelPlace.AutoSize = true;
-            this.labelPlace.Location = new System.Drawing.Point(6, 35);
+            this.labelPlace.Location = new System.Drawing.Point(6, 31);
             this.labelPlace.Name = "labelPlace";
             this.labelPlace.Size = new System.Drawing.Size(39, 13);
             this.labelPlace.TabIndex = 4;
@@ -103,7 +104,7 @@
             // 
             this.buttonTake.Location = new System.Drawing.Point(51, 54);
             this.buttonTake.Name = "buttonTake";
-            this.buttonTake.Size = new System.Drawing.Size(75, 23);
+            this.buttonTake.Size = new System.Drawing.Size(143, 23);
             this.buttonTake.TabIndex = 6;
             this.buttonTake.Text = "Забрать";
             this.buttonTake.UseVisualStyleBackColor = true;
@@ -113,7 +114,7 @@
             // 
             this.maskedTextBoxPlace.Location = new System.Drawing.Point(51, 28);
             this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
-            this.maskedTextBoxPlace.Size = new System.Drawing.Size(83, 20);
+            this.maskedTextBoxPlace.Size = new System.Drawing.Size(143, 20);
             this.maskedTextBoxPlace.TabIndex = 5;
             // 
             // pictureBoxTakeTrain
@@ -127,17 +128,17 @@
             // listBoxLevels
             // 
             this.listBoxLevels.FormattingEnabled = true;
-            this.listBoxLevels.Location = new System.Drawing.Point(847, 110);
+            this.listBoxLevels.Location = new System.Drawing.Point(860, 119);
             this.listBoxLevels.Name = "listBoxLevels";
-            this.listBoxLevels.Size = new System.Drawing.Size(120, 95);
+            this.listBoxLevels.Size = new System.Drawing.Size(240, 108);
             this.listBoxLevels.TabIndex = 8;
-            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.ListBoxLevels_SelectedIndexChanged);
             // 
             // buttonNewFormTrain
             // 
-            this.buttonNewFormTrain.Location = new System.Drawing.Point(962, 12);
+            this.buttonNewFormTrain.Location = new System.Drawing.Point(975, 27);
             this.buttonNewFormTrain.Name = "buttonNewFormTrain";
-            this.buttonNewFormTrain.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewFormTrain.Size = new System.Drawing.Size(125, 36);
             this.buttonNewFormTrain.TabIndex = 9;
             this.buttonNewFormTrain.Text = "Добавить ";
             this.buttonNewFormTrain.UseVisualStyleBackColor = true;
@@ -149,7 +150,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1321, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1116, 24);
             this.menuStrip.TabIndex = 10;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -185,11 +186,22 @@
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
             // 
+            // sortButton
+            // 
+            this.sortButton.Location = new System.Drawing.Point(975, 69);
+            this.sortButton.Name = "sortButton";
+            this.sortButton.Size = new System.Drawing.Size(125, 37);
+            this.sortButton.TabIndex = 11;
+            this.sortButton.Text = "Сортировка";
+            this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.SortButton_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 768);
+            this.ClientSize = new System.Drawing.Size(1116, 879);
+            this.Controls.Add(this.sortButton);
             this.Controls.Add(this.buttonNewFormTrain);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.pictureBoxTakeTrain);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button sortButton;
     }
 }

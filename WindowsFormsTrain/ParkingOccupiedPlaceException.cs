@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace WindowsFormsTrain
     {
         public ParkingOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит автомобиль")
         {
-        }    }
+        }
+    }
 }

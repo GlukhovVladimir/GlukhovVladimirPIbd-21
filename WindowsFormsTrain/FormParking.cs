@@ -102,7 +102,6 @@ namespace WindowsFormsTrain
                     }
                 }
             }
-
         }
 
         private void buttonSetElecTrain_Click(object sender, EventArgs e)
@@ -130,11 +129,6 @@ namespace WindowsFormsTrain
             }
         }
 
-        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw();
-        }
-
         private void AddTrain(ITransport train)
         {
             if (train != null && listBoxLevels.SelectedIndex > -1)
@@ -152,6 +146,12 @@ namespace WindowsFormsTrain
                    MessageBoxIcon.Error);
                     logger.Error("Переполнение");
                 }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка",
@@ -160,6 +160,7 @@ namespace WindowsFormsTrain
                 }
             }
         }
+
         private void buttonFormTrainConfig_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();
@@ -213,6 +214,17 @@ namespace WindowsFormsTrain
                 Draw();
             }
         }
+
+        private void SortButton_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }
+
+        private void ListBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Draw();
+        }
     }
 }
-

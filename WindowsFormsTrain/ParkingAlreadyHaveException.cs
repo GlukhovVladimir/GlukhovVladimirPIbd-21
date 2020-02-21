@@ -1,16 +1,14 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NLog;
 
 namespace WindowsFormsTrain
 {
-    public class ParkingOverflowException : Exception
+    class ParkingAlreadyHaveException : Exception
     {
-        public ParkingOverflowException() : base("На парковке нет свободных мест")
+        public ParkingAlreadyHaveException() : base ("На парковке уже есть такой транспорт")
         {
         }
     }

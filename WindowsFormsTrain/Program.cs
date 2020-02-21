@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLog;
 
-
 namespace WindowsFormsTrain
 {
     public delegate void trainDelegate(ITransport train);

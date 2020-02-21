@@ -9,18 +9,19 @@ using NLog;
 
 namespace WindowsFormsTrain
 {
-    public class TrainVehicle : Vehicle
+    public class TrainVehicle : Vehicle, IComparable<TrainVehicle>, IEquatable<TrainVehicle>
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
-   
+
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-            
+
         }
+
         public TrainVehicle(string info)
         {
             string[] strs = info.Split(';');
@@ -37,28 +38,28 @@ namespace WindowsFormsTrain
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
             {
-                
+
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - 2.1 * trainWidth)
                     {
                         _startPosX += step;
                     }
                     break;
-              
+
                 case Direction.Left:
                     if (_startPosX - step > -0.01 * trainWidth)
                     {
                         _startPosX -= step;
                     }
                     break;
-          
+
                 case Direction.Up:
                     if (_startPosY - step > 1.4 * trainHeight)
                     {
                         _startPosY -= step;
                     }
                     break;
-               
+
                 case Direction.Down:
                     if (_startPosY + step < _pictureHeight - 0.2 * trainHeight)
                     {
@@ -67,7 +68,7 @@ namespace WindowsFormsTrain
                     break;
             }
         }
-  
+
         public override void DrawTrain(Graphics g)
         {
             Brush body = new SolidBrush(MainColor);
@@ -87,9 +88,77 @@ namespace WindowsFormsTrain
             g.FillRectangle(empty, _startPosX + 125, _startPosY - 40 + 60 + 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 175, _startPosY - 40 + 60 + 40, 32, 20);
         }
+
         public override string ToString()
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
+        }
+
+        public int CompareTo(TrainVehicle other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return MaxSpeed.CompareTo(other.MaxSpeed);
+            }
+            if (Weight != other.Weight)
+            {
+                return Weight.CompareTo(other.Weight);
+            }
+            if (MainColor != other.MainColor)
+            {
+                MainColor.Name.CompareTo(other.MainColor.Name);
+            }
+            return 0;
+        }
+
+        public bool Equals(TrainVehicle other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is TrainVehicle carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

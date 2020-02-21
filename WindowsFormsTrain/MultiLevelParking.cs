@@ -20,7 +20,6 @@ namespace WindowsFormsTrain
             parkingStages = new List<Parking<ITransport>>();
             this.pictureWidth = pictureWidth;
             this.pictureHeight = pictureHeight;
-          
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth,
@@ -121,6 +120,11 @@ namespace WindowsFormsTrain
                 }
             }
             return true;
+        }
+
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }

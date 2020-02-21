@@ -31,13 +31,12 @@ namespace WindowsFormsTrain
             Random rnd = new Random();
             train = new TrainVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
             train.SetPosition(100, 100, pictureBoxTrain.Width,
-            pictureBoxTrain.Height);
+           pictureBoxTrain.Height);
             Draw();
         }
        
         private void buttonMove_Click(object sender, EventArgs e)
         {
-          
             string name = (sender as Button).Name;
             switch (name)
             {
@@ -62,7 +61,7 @@ namespace WindowsFormsTrain
             Random rnd = new Random();
              train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
             train.SetPosition(rnd.Next(100, 100), rnd.Next(100, 100), pictureBoxTrain.Width,
-            pictureBoxTrain.Height);
+           pictureBoxTrain.Height);
             Draw();
         }
     }
