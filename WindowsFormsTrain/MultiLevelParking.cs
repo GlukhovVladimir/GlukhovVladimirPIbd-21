@@ -42,13 +42,12 @@ namespace WindowsFormsTrain
             {
                 File.Delete(filename);
             }
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            using (StreamWriter sw = new StreamWriter(filename))
             {
-                WriteToFile("CountLevels:" + parkingStages.Count +
-               Environment.NewLine, fs);
+                sw.WriteLine("CountLeveles:" + parkingStages.Count);
                 foreach (var level in parkingStages)
                 {
-                    WriteToFile("Level" + Environment.NewLine, fs);
+                    sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
                         var car = level[i];
@@ -56,13 +55,13 @@ namespace WindowsFormsTrain
                         {
                             if (car.GetType().Name == "TrainVehicle")
                             {
-                                WriteToFile(i + ":TrainVehicle:", fs);
+                                sw.Write(i + ":TrainVehicle:");
                             }
                             if (car.GetType().Name == "ElecTrain")
                             {
-                                WriteToFile(i + ":ElecTrain:", fs);
+                               sw.Write(i + ":ElecTrain:");
                             }
-                            WriteToFile(car + Environment.NewLine, fs);
+                            sw.WriteLine(car);
                         }
                     }
                 }
@@ -70,68 +69,54 @@ namespace WindowsFormsTrain
             }
             return true;
         }
-
-        private void WriteToFile(string text, FileStream stream)
-        {
-            byte[] info = new UTF8Encoding(true).GetBytes(text);
-            stream.Write(info, 0, info.Length);
-        }
-
+     
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
                 return false;
             }
-            string bufferTextFromFile = "";
-            using (FileStream fs = new FileStream(filename, FileMode.Open))
+            string buffer = "";
+            using (StreamReader sr = new StreamReader(filename))
             {
-                byte[] b = new byte[fs.Length];
-                UTF8Encoding temp = new UTF8Encoding(true);
-                while (fs.Read(b, 0, b.Length) > 0)
+                if ((buffer = sr.ReadLine()).Contains("CountLeveles"))
                 {
-                    bufferTextFromFile += temp.GetString(b);
+                    int count = Convert.ToInt32(buffer.Split(':')[1]);
+                    if (parkingStages != null)
+                    {
+                        parkingStages.Clear();
+                    }
+                    parkingStages = new List<Parking<ITransport>>(count);
                 }
-            }
-            bufferTextFromFile = bufferTextFromFile.Replace("\r", "");
-            var strs = bufferTextFromFile.Split('\n');
-            if (strs[0].Contains("CountLevels"))
-            {
-                int count = Convert.ToInt32(strs[0].Split(':')[1]);
-                if (parkingStages != null)
+                else
                 {
-                    parkingStages.Clear();
+                    return false;
                 }
-                parkingStages = new List<Parking<ITransport>>(count);
-            }
-            else
-            {
-                return false;
-            }
-            int counter = -1;
-            ITransport train = null;
-            for (int i = 1; i < strs.Length; ++i)
-            {
-                if (strs[i] == "Level")
+                int counter = -1;
+                ITransport car = null;
+                while ((buffer = sr.ReadLine()) != null)
                 {
-                    counter++;
-                   
-                parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
-                    continue;
+                    if (buffer == "Level")
+                    {
+                        counter++;
+                        parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(buffer))
+                    {
+                        continue;
+                    }
+                    if (buffer.Split(':')[1] == "Locomotive")
+                    {
+                        Console.WriteLine(buffer.Split(':')[2]);
+                        car = new TrainVehicle(buffer.Split(':')[2]);
+                    }
+                    else if (buffer.Split(':')[1] == "ElecTrain")
+                    {
+                        car = new ElecTrain(buffer.Split(':')[2]);
+                    }
+                    parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = car;
                 }
-                if (string.IsNullOrEmpty(strs[i]))
-                {
-                    continue;
-                }
-                if (strs[i].Split(':')[1] == "TrainVehicle")
-                {
-                    train = new TrainVehicle(strs[i].Split(':')[2]);
-                }
-                else if (strs[i].Split(':')[1] == "ElecTrain")
-                {
-                    train = new ElecTrain(strs[i].Split(':')[2]);
-                }
-                parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = train;
             }
             return true;
         }
