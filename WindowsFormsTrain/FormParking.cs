@@ -100,8 +100,7 @@ namespace WindowsFormsTrain
                         logger.Error("Неизвестная ошибка");
                     }
                 }
-            }
-
+            }
         }
 
         private void buttonSetElecTrain_Click(object sender, EventArgs e)
@@ -159,7 +158,7 @@ namespace WindowsFormsTrain
                 }
             }
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonFormTrainConfig_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();
             trainForm.AddEvent(AddTrain);
