@@ -134,7 +134,7 @@
             this.buttonNewFormTrain.TabIndex = 9;
             this.buttonNewFormTrain.Text = "Добавить ";
             this.buttonNewFormTrain.UseVisualStyleBackColor = true;
-            this.buttonNewFormTrain.Click += new System.EventHandler(this.button4_Click);
+            this.buttonNewFormTrain.Click += new System.EventHandler(this.buttonFormTrainConfig_Click);
             // 
             // FormParking
             // 
