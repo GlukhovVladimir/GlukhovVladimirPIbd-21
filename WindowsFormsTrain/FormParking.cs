@@ -20,7 +20,7 @@ namespace WindowsFormsTrain
         {
             InitializeComponent();
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
-            pictureBoxParking.Height);
+           pictureBoxParking.Height);
             for (int i = 0; i < countLevel; i++)
             {
                 listBoxLevels.Items.Add("Уровень " + (i + 1));
@@ -32,8 +32,8 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-                Bitmap bmp = new Bitmap(pictureBoxParking.Width,
-                pictureBoxParking.Height);
+            Bitmap bmp = new Bitmap(pictureBoxParking.Width,
+            pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
@@ -63,9 +63,11 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
+
                 if (maskedTextBoxPlace.Text != "")
                 {
                     var train = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
+
                     if (train != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxParking.Width,
@@ -109,7 +111,6 @@ namespace WindowsFormsTrain
                     }
                 }
             }
-
         }
 
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace WindowsFormsTrain
                 }
             }
         }
+
         private void buttonFormTrainConfig_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();
