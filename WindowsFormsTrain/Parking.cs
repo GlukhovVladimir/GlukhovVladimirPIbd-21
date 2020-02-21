@@ -53,7 +53,6 @@ namespace WindowsFormsTrain
             }
             return null;
         }
-
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);

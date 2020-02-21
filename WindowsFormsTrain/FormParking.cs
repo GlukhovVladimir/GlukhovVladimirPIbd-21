@@ -27,7 +27,6 @@ namespace WindowsFormsTrain
             }
             listBoxLevels.SelectedIndex = 0;
         }
-
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -63,11 +62,9 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-
                 if (maskedTextBoxPlace.Text != "")
                 {
                     var train = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
-
                     if (train != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxParking.Width,
@@ -133,7 +130,6 @@ namespace WindowsFormsTrain
                 }
             }
         }
-
         private void buttonFormTrainConfig_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();
