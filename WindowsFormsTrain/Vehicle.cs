@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NLog;
 
+
 namespace WindowsFormsTrain
 {
     public abstract class Vehicle : ITransport
@@ -25,7 +26,6 @@ namespace WindowsFormsTrain
             _pictureWidth = width;
             _pictureHeight = height;
         }
-
         public void SetMainColor(Color color)
         {
             MainColor = color;

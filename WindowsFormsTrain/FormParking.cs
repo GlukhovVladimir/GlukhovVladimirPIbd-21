@@ -1,3 +1,4 @@
+
 ﻿using System;
 using NLog;
 using System.Collections.Generic;
@@ -100,7 +101,8 @@ namespace WindowsFormsTrain
                         logger.Error("Неизвестная ошибка");
                     }
                 }
-            }
+            }
+
         }
 
         private void buttonSetElecTrain_Click(object sender, EventArgs e)
@@ -213,3 +215,4 @@ namespace WindowsFormsTrain
         }
     }
 }
+
