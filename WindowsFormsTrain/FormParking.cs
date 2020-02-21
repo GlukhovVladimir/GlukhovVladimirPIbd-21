@@ -149,8 +149,7 @@ namespace WindowsFormsTrain
                 {
                     MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }
-
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка",
@@ -160,7 +159,7 @@ namespace WindowsFormsTrain
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonFormTrainConfig_Click(object sender, EventArgs e)
         {
             trainForm = new FormTrainConfig();
             trainForm.AddEvent(AddTrain);

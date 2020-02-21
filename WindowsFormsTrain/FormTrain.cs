@@ -18,6 +18,7 @@ namespace WindowsFormsTrain
         {
             InitializeComponent();
         }
+
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxTrain.Width, pictureBoxTrain.Height);
@@ -31,7 +32,7 @@ namespace WindowsFormsTrain
             Random rnd = new Random();
             train = new TrainVehicle(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
             train.SetPosition(100, 100, pictureBoxTrain.Width,
-            pictureBoxTrain.Height);
+           pictureBoxTrain.Height);
             Draw();
         }
        
@@ -59,9 +60,9 @@ namespace WindowsFormsTrain
         private void buttonCreateElecTrain_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
+             train = new ElecTrain(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
             train.SetPosition(rnd.Next(100, 100), rnd.Next(100, 100), pictureBoxTrain.Width,
-            pictureBoxTrain.Height);
+           pictureBoxTrain.Height);
             Draw();
         }
     }
