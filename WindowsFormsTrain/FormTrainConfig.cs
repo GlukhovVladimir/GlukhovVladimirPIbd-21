@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace WindowsFormsTrain
     {
         ITransport train = null;
         private event trainDelegate eventAddTrain;
+
         public FormTrainConfig()
         {
             InitializeComponent();
@@ -82,7 +84,7 @@ namespace WindowsFormsTrain
                 }
             }
         }
-  
+
         private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
         {
             if (train != null)
@@ -90,18 +92,17 @@ namespace WindowsFormsTrain
                 train.SetMainColor((Color)e.Data.GetData(typeof(Color)));
                 DrawTrain();
             }
-        }
+        }
+
         private void labelTrain_MouseDown(object sender, MouseEventArgs e)
         {
             labelLocomotive.DoDragDrop(labelLocomotive.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
-
         private void labelElecTrain_MouseDown(object sender, MouseEventArgs e)
         {
             labelElecTrain.DoDragDrop(labelElecTrain.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-
         private void panelTrain_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))

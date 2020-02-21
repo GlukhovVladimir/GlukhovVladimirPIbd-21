@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,12 +12,24 @@ namespace WindowsFormsTrain
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
-   
+
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
-            MainColor = mainColor; 
+            MainColor = mainColor;
+            
+        }
+
+        public TrainVehicle(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
 
         public override void MoveTransport(Direction direction)
@@ -24,6 +37,7 @@ namespace WindowsFormsTrain
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
             {
+                
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - 2.1 * trainWidth)
                     {
@@ -56,7 +70,7 @@ namespace WindowsFormsTrain
   
         public override void DrawTrain(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);    
+          
             Brush body = new SolidBrush(MainColor);
             Brush wheels = new SolidBrush(Color.Black);
             Brush empty = new SolidBrush(Color.White);
@@ -73,6 +87,11 @@ namespace WindowsFormsTrain
             g.FillRectangle(empty, _startPosX + 55, _startPosY - 40 + 60 + 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 125, _startPosY - 40 + 60 + 40, 30, 20);
             g.FillRectangle(empty, _startPosX + 175, _startPosY - 40 + 60 + 40, 32, 20);
+        }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }

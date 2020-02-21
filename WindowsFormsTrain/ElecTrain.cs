@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,22 @@ namespace WindowsFormsTrain
             DopColor = dopColor;
             Antenna = antenna;
             Headlamp = headlamp;
-        }   
-  
+            Random rnd = new Random();
+        }
+        public ElecTrain(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 6)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                Antenna = Convert.ToBoolean(strs[4]);
+                Headlamp = Convert.ToBoolean(strs[5]);
+            }
+        }
+
         public override void DrawTrain(Graphics g)
         {
             Pen romb = new Pen(DopColor);
@@ -51,8 +66,10 @@ namespace WindowsFormsTrain
         {
             DopColor = color;
         }
-
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + Antenna + ";" +
+           Headlamp;
+        }
     }
 }
-
-
