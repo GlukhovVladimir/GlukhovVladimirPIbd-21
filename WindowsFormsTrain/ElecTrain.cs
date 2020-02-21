@@ -40,8 +40,7 @@ namespace WindowsFormsTrain
                 Antenna = Convert.ToBoolean(strs[4]);
                 Headlamp = Convert.ToBoolean(strs[5]);
             }
-        }
-
+        }
         public override void DrawTrain(Graphics g)
         {
             Pen romb = new Pen(DopColor);
@@ -76,3 +75,5 @@ namespace WindowsFormsTrain
         }
     }
 }
+
+
