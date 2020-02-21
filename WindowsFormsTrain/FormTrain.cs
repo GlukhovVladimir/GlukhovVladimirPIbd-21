@@ -18,7 +18,6 @@ namespace WindowsFormsTrain
         {
             InitializeComponent();
         }
-
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxTrain.Width, pictureBoxTrain.Height);

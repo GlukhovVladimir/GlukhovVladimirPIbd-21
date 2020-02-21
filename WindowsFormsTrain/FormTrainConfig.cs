@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,7 +97,6 @@ namespace WindowsFormsTrain
         {
             labelLocomotive.DoDragDrop(labelLocomotive.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
-
         private void labelElecTrain_MouseDown(object sender, MouseEventArgs e)
         {
             labelElecTrain.DoDragDrop(labelElecTrain.Text, DragDropEffects.Move |

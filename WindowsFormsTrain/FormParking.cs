@@ -1,3 +1,4 @@
+
 ﻿using System;
 using NLog;
 using System.Collections.Generic;
@@ -149,7 +150,8 @@ namespace WindowsFormsTrain
                 {
                     MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }
+                }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка",
