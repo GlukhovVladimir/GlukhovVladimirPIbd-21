@@ -111,7 +111,8 @@ namespace WindowsFormsTrain
                 {
                     return _places[ind];
                 }
-                throw new ParkingNotFoundException(ind);
+                throw new ParkingNotFoundException(ind);
+
             }
             set
             {
@@ -124,7 +125,8 @@ namespace WindowsFormsTrain
                 else
                 {
                     throw new ParkingOccupiedPlaceException(ind);
-                }
+                }
+
             }
 
         }

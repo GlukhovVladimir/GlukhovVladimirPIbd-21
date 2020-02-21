@@ -12,13 +12,12 @@ namespace WindowsFormsTrain
     {
         private const int trainWidth = 100;
         private const int trainHeight = 60;
-
+        
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-
         }
 
         public TrainVehicle(string info)
@@ -30,34 +29,31 @@ namespace WindowsFormsTrain
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
             }
-        }
+        }
+
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
             {
-
                 case Direction.Right:
                     if (_startPosX + step < _pictureWidth - 2.1 * trainWidth)
                     {
                         _startPosX += step;
                     }
                     break;
-
                 case Direction.Left:
                     if (_startPosX - step > -0.01 * trainWidth)
                     {
                         _startPosX -= step;
                     }
                     break;
-
                 case Direction.Up:
                     if (_startPosY - step > 1.4 * trainHeight)
                     {
                         _startPosY -= step;
                     }
                     break;
-
                 case Direction.Down:
                     if (_startPosY + step < _pictureHeight - 0.2 * trainHeight)
                     {
@@ -66,7 +62,7 @@ namespace WindowsFormsTrain
                     break;
             }
         }
-
+        
         public override void DrawTrain(Graphics g)
         {
             Brush body = new SolidBrush(MainColor);
