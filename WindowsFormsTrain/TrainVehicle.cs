@@ -9,44 +9,44 @@ namespace WindowsFormsTrain
 {
     public class TrainVehicle : Vehicle
     {
-        private const int carWidth = 100;
-        private const int carHeight = 60;
+        private const int trainWidth = 100;
+        private const int trainHeight = 60;
    
         public TrainVehicle(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
-            MainColor = mainColor;
+            MainColor = mainColor; 
         }
 
         public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
-            {   
+            {
                 case Direction.Right:
-                    if (_startPosX + step < _pictureWidth - 2.1 * carWidth)
+                    if (_startPosX + step < _pictureWidth - 2.1 * trainWidth)
                     {
                         _startPosX += step;
                     }
                     break;
               
                 case Direction.Left:
-                    if (_startPosX - step > -0.01 * carWidth)
+                    if (_startPosX - step > -0.01 * trainWidth)
                     {
                         _startPosX -= step;
                     }
                     break;
           
                 case Direction.Up:
-                    if (_startPosY - step > 1.4 * carHeight)
+                    if (_startPosY - step > 1.4 * trainHeight)
                     {
                         _startPosY -= step;
                     }
                     break;
                
                 case Direction.Down:
-                    if (_startPosY + step < _pictureHeight - 0.2 * carHeight)
+                    if (_startPosY + step < _pictureHeight - 0.2 * trainHeight)
                     {
                         _startPosY += step;
                     }
@@ -54,7 +54,7 @@ namespace WindowsFormsTrain
             }
         }
   
-        public override void DrawCar(Graphics g)
+        public override void DrawTrain(Graphics g)
         {
             Pen pen = new Pen(Color.Black);    
             Brush body = new SolidBrush(MainColor);

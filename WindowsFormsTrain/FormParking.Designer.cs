@@ -37,6 +37,8 @@
             this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
             this.pictureBoxTakeTrain = new System.Windows.Forms.PictureBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
+            this.buttonNewFormTrain = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxPlace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTrain)).BeginInit();
@@ -53,7 +55,7 @@
             // 
             // buttonLocomotive
             // 
-            this.buttonLocomotive.Location = new System.Drawing.Point(928, 12);
+            this.buttonLocomotive.Location = new System.Drawing.Point(847, 12);
             this.buttonLocomotive.Name = "buttonLocomotive";
             this.buttonLocomotive.Size = new System.Drawing.Size(109, 36);
             this.buttonLocomotive.TabIndex = 1;
@@ -63,7 +65,7 @@
             // 
             // buttonElecTrain
             // 
-            this.buttonElecTrain.Location = new System.Drawing.Point(928, 54);
+            this.buttonElecTrain.Location = new System.Drawing.Point(847, 54);
             this.buttonElecTrain.Name = "buttonElecTrain";
             this.buttonElecTrain.Size = new System.Drawing.Size(109, 37);
             this.buttonElecTrain.TabIndex = 2;
@@ -119,17 +121,28 @@
             // listBoxLevels
             // 
             this.listBoxLevels.FormattingEnabled = true;
-            this.listBoxLevels.Location = new System.Drawing.Point(917, 110);
+            this.listBoxLevels.Location = new System.Drawing.Point(847, 110);
             this.listBoxLevels.Name = "listBoxLevels";
             this.listBoxLevels.Size = new System.Drawing.Size(120, 95);
             this.listBoxLevels.TabIndex = 8;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            // 
+            // buttonNewFormTrain
+            // 
+            this.buttonNewFormTrain.Location = new System.Drawing.Point(962, 12);
+            this.buttonNewFormTrain.Name = "buttonNewFormTrain";
+            this.buttonNewFormTrain.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewFormTrain.TabIndex = 9;
+            this.buttonNewFormTrain.Text = "Добавить ";
+            this.buttonNewFormTrain.UseVisualStyleBackColor = true;
+            this.buttonNewFormTrain.Click += new System.EventHandler(this.buttonFormTrainConfig_Click);
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 768);
+            this.Controls.Add(this.buttonNewFormTrain);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.pictureBoxTakeTrain);
             this.Controls.Add(this.groupBoxPlace);
@@ -157,5 +170,6 @@
         private System.Windows.Forms.Button buttonTake;
         private System.Windows.Forms.PictureBox pictureBoxTakeTrain;
         private System.Windows.Forms.ListBox listBoxLevels;
+        private System.Windows.Forms.Button buttonNewFormTrain;
     }
 }

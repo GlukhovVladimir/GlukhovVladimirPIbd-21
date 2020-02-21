@@ -14,6 +14,8 @@ namespace WindowsFormsTrain
     {
         MultiLevelParking parking;
         private const int countLevel = 5;
+        FormTrainConfig trainForm;
+
         public FormParking()
         {
             InitializeComponent();
@@ -44,8 +46,8 @@ namespace WindowsFormsTrain
                 ColorDialog dialog = new ColorDialog();
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    var car = new TrainVehicle(100, 1000, dialog.Color);
-                    int place = parking[listBoxLevels.SelectedIndex] + car;
+                    var train = new TrainVehicle(100, 1000, dialog.Color);
+                    int place = parking[listBoxLevels.SelectedIndex] + train;
                     if (place == -1)
                     {
                         MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -60,20 +62,17 @@ namespace WindowsFormsTrain
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-
                 if (maskedTextBoxPlace.Text != "")
-
                 {
-                    var car = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
-
-                    if (car != null)
+                    var train = parking[listBoxLevels.SelectedIndex] -  Convert.ToInt32(maskedTextBoxPlace.Text);
+                    if (train != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxParking.Width,
                        pictureBoxTakeTrain.Height);
                         Graphics gr = Graphics.FromImage(bmp);
-                        car.SetPosition(5, 100, pictureBoxTakeTrain.Width,
+                        train.SetPosition(5, 100, pictureBoxTakeTrain.Width,
                        pictureBoxTakeTrain.Height);
-                        car.DrawCar(gr);
+                        train.DrawTrain(gr);
                         pictureBoxTakeTrain.Image = bmp;
                     }
                     else
@@ -97,9 +96,9 @@ namespace WindowsFormsTrain
                     ColorDialog dialogDop = new ColorDialog();
                     if (dialogDop.ShowDialog() == DialogResult.OK)
                     {
-                        var car = new ElecTrain(100, 1000, dialog.Color, dialogDop.Color,
+                        var train = new ElecTrain(100, 1000, dialog.Color, dialogDop.Color,
                        true, true);
-                        int place = parking[listBoxLevels.SelectedIndex] + car;
+                        int place = parking[listBoxLevels.SelectedIndex] + train;
                         if (place == -1)
                         {
                             MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -109,11 +108,34 @@ namespace WindowsFormsTrain
                     }
                 }
             }
+
         }
 
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+       
+        private void AddTrain(ITransport train)
+        {
+            if (train != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + train;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
+        private void buttonFormTrainConfig_Click(object sender, EventArgs e)
+        {
+            trainForm = new FormTrainConfig();
+            trainForm.AddEvent(AddTrain);
+            trainForm.Show();
         }
     }
 }
